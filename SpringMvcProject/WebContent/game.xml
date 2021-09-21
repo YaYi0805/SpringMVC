@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<role>
+		<name>Happy</name>
+		<level>30</level>
+	</role>
+	<role>
+		<name>World</name>
+		<level>20</level>
+	</role>
+</game>

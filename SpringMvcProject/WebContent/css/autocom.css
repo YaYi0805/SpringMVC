@@ -1,0 +1,6 @@
+.basis{
+border:1px solid #a8d4b1; background-color:#FFF0AC; margin:2px 0px;padding:10px;
+border-radius:5px; height:150px; width:300px
+}
+#search{padding: 10px;border: #0000C6 1px solid;border-radius:5px;}
+#aname{border: 1px solid #FF9797; background-color:#D9FFFF;width:175px}

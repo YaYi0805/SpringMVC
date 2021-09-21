@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax17_jQuery_getJSON</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.getJSON('json/profiles2.json', function (data) {
+			
+			var resultText = '';
+			for(var i=0;i<data.length;i++){
+				resultText += data[i].name + " " + data[i].age + " " + data[i].address + "<br/>";
+			}
+			
+			$('#result').html(resultText);
+			
+		});
+	});
+</script>
+</head>
+<body>
+$.getJSON():用來向伺服器以HTTP的GET方法取得JSON格式的資料內容
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax16_jQuery_selectorsload</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#result').load('jQueryPage01.jsp', function () {
+			alert('success');
+		});
+	});
+</script>
+</head>
+<body>
+$('selectors').load():用來將伺服器回應的內容設定在指定的物件上並顯示於網頁中
+<div id="result"></div>
+</body>
+</html>

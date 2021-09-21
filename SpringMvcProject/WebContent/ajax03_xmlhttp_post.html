@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax03_xmlhttp_post</title>
+<script type="text/javascript">
+	var xh = new XMLHttpRequest();
+	xh.open('post', 'ajaxprofiles.controller', true); //ProfilesController.java
+	xh.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //發送表單類型資料
+	xh.send('userName=andy&userAddress=taipei&userPhone=02-2456-9217');
+
+	xh.onload = function() {
+		console.log(xh.status);
+		console.log(xh.responseText);
+	};
+</script>
+</head>
+<body>
+Ajax action-XMLHttpRequest POST應用 - 非同步
+</body>
+</html>

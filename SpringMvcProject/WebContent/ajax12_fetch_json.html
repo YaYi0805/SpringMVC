@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax12_fetch_json</title>
+<script type="text/javascript">
+	fetch('json/profiles2.json').then(
+		function (response) {
+			if(response.status!=200){
+				console.log(response.status);
+				return;
+			}
+			
+			var resultText = '';
+			response.json().then(function (data) {
+				console.log(data);
+				
+				for(var i=0;i<data.length;i++){
+					resultText += data[i].name + " " + data[i].age + " " + data[i].address + "<br/>";
+				}
+				
+				document.getElementById('result').innerHTML = resultText;
+			});
+		}
+	);
+</script>
+</head>
+<body>
+fetch API - 類似XNLHttpRequest的Ajax功能與Promise物件結合
+<div id="result"></div>
+</body>
+</html>

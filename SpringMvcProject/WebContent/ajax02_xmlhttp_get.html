@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax02_xmlhttp_get</title>
+<script type="text/javascript">
+	var xh = new XMLHttpRequest();
+	xh.open('get','https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&sort=ImportDate%20desc&format=json',true);
+	xh.send();
+	
+	xh.onload = function () {
+		console.log(xh.responseText);
+	};
+</script>
+</head>
+<body>
+Ajax action-XMLHttpRequest GET應用 - 非同步
+</body>
+</html>

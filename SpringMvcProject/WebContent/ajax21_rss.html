@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax21_rss</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#receive').click(function () {
+			$.ajax({
+				type:'get', //預設就有,可不寫
+				dataType:'xml', //回應資料的類型
+				url:'rssreader.controller',
+				success: function (data) {
+					console.log(data);
+					$('#div1').empty(""); //此行重要!!清空div標籤內所有的資料
+					var xTitle, xLink;
+					$('item', data).each(function (e) { //item用來定義每筆資訊標籤
+						xTitle = $('title',this).text();//title用來定義每筆標題標籤
+						xLink = $('link',this).text();  //link用來定義每筆連結標籤
+						$('<a/>').attr('href',xLink).attr('target','_blank').text(xTitle).appendTo($('#div1'));
+	                    $('<br/>').appendTo($('#div1'));
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<button id="receive">Reveive</button>
+<div id="div1"></div>
+</body>
+</html>

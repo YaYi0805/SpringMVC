@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax19_jQuery_serialize</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#send').click(function () {
+			$('#result').text($('form').serialize());
+		});
+	});
+</script>
+</head>
+<body>
+$(selector).serialize():序列化表單值,建立URL亂碼的文字資料字串,序列化後的值可用於發出請求時的查詢字串
+<form>
+	Name:<input type="text" name="userName"/><br/>
+	Address:<input type="text" name="userAddress"/><br/>
+</form>
+<button id="send">Send</button>
+<div id="result"></div>
+</body>
+</html>

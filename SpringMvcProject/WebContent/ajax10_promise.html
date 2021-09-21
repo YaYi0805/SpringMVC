@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax10_promise</title>
+<script type="text/javascript">
+	window.onload = function () {
+		
+		var promise = new Promise(function (resolve, reject) {
+			setTimeout(function () {
+				resolve('Nice to meet you.')
+			},3000); //3秒
+		});
+		
+		promise.then(
+			function (msg) {
+				document.getElementById('result').innerHTML = msg;
+			}		
+		);
+		
+	}
+</script>
+</head>
+<body>
+ES6 Promise - promise物件是等待非同步動作完成的物件,當事件完成時,再根據所取得的結果狀態執行相對應的處理
+<div id="result"></div>
+</body>
+</html>

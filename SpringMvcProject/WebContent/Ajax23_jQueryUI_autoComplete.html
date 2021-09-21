@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax23_jQueryUI_autoComplete</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var programs = ["Asp","C","C++","C#","COBOL","Java","JavaScript","Python","Ruby","Spring","SpringMvc","SpringBoot"];
+		$("#prgs").autocomplete({
+	        source:programs
+		});
+	});
+</script>
+</head>
+<body>
+<div class="ui-widget">
+	<label for="prgs">Programs:</label>
+	<input id="prgs">
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax11_asyncAwait</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//async用來取得函數回傳Promise物件
+		async function play(){
+	        var promise = new Promise(function(resolve, reject){
+	        	resolve('Have a good time.');
+	        });
+	        
+	        //await用來讓函數等待Promise物件待取得後再執行
+	        document.getElementById('result').innerHTML = await promise;
+	    }
+	
+		play();
+	}
+</script>
+</head>
+<body>
+Async & Await - 用來簡化Promise
+<div id="result"></div>
+</body>
+</html>

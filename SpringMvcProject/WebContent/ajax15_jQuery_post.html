@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax15_jQuery_post</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$("#result").html('ok');
+		$.post('jQueryPage01.jsp', function (data) {
+			$("#result").html(data)
+		})
+	});
+</script>
+</head>
+<body>
+$.post()方法:用來向伺服器端發出POST請求
+<div id="result"></div>
+</body>
+</html>

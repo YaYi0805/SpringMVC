@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax09_promise</title>
+<script type="text/javascript">
+	window.onload = function() {
+		function showResult(msg) {
+			document.getElementById('result').innerHTML = msg;
+		}
+		
+		//Promise建構函數接受函數作為參數,resolve和reject兩函數由JavaScript自動提供,不需自行撰寫
+		var promise = new Promise(function(resolve, reject) { 
+			var x = 1;
+			if (x == 0) {
+				resolve('OK');
+			} else {
+				reject('Error');
+			}
+		});
+
+		//then(onResolved,onRejected)方法:用來指定resolved,rejected執行的回乎函數
+		promise.then(
+			function(value) {      //當傳入狀態成功時執行value透過resolve函數取得
+				showResult(value);
+			}, function(error) {   //當傳入狀態失敗時執行error透過reject函數取得
+				showResult(error);
+			}
+		);
+	}
+</script>
+</head>
+<body>
+ES6 Promise - promise物件是等待非同步動作完成的物件,當事件完成時,再根據所取得的結果狀態執行相對應的處理
+<div id="result"></div>
+</body>
+</html>

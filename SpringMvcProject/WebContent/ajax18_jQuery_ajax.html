@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax18_jQuery_ajax</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#send').click(function () {
+			$.ajax({
+				url:'jQueryPage01.jsp', //請求網址資源
+				success: function (data) { //請求成功時執行的函數
+					$('#result').html(data);
+				},
+				complete: function () { //請求完成時執行的函數
+					$('#send').prop('disabled',true).text('Refresh');
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<div id="result"></div>
+<button id="send">Send</button>
+</body>
+</html>

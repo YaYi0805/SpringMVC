@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax05_xml_json_get</title>
+<script type="text/javascript">
+	var xh = new XMLHttpRequest();
+	//xh.open('get','json/profiles2.json',true);
+	xh.open('get','houseconvertjson2.controller',true); //JsonCreateController.java
+	xh.send();
+	
+	xh.onload = function () {
+		//console.log(xh.responseText);
+		var data = JSON.parse(xh.responseText); //使用JSON.parse()方法解析responseText取得資訊
+		
+		var resultText = '';
+		for(var i=0;i<data.length;i++){
+			//resultText += data[i].name + " " + data[i].age + " " + data[i].address + "<br/>";
+			resultText += data[i].houseid + " " + data[i].housename + "<br/>";
+		}
+		
+		console.log(resultText);
+		
+		document.getElementById('result').innerHTML = resultText;
+		
+	}
+</script>
+</head>
+<body>
+Ajax action - 透過XMLHttpRequest物件接收Json格式資料 - 非同步
+<div id = "result"></div>
+</body>
+</html>

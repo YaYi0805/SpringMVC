@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax13_fetch_upload</title>
+<script type="text/javascript">
+	function upload() {
+		var form = document.getElementById('form1');
+		var formData = new FormData(form);
+		fetch('ajaxupload.controller',{
+			method:'POST',
+			body:formData
+		}).then(
+			function (response) {
+				if(response.status!=200){
+					console.log('response status1:'+response.status);
+					return;
+				}
+				console.log('response status2:'+response.status);
+			}		
+		)
+		
+	}
+</script>
+</head>
+<body>
+fetch API - 類似XNLHttpRequest的Ajax功能與Promise物件結合<br/>
+<form id="form1">
+	<p>
+	Please choose picture to upload:<br/>
+	<input type="file" name="myfile"/><br/>
+	</p>
+	<input type="button" value="Upload" onclick="upload()"/>
+</form>
+</body>
+</html>

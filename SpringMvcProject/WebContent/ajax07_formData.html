@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax07_formData</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var form = document.getElementById('form1');
+		var send = document.getElementById('send');
+		
+		send.addEventListener('click', function (e) {
+			e.preventDefault();
+			
+			var formData = new FormData(form);
+			
+			var xh = new XMLHttpRequest();
+			xh.open('post','formDataProfiles.controller');
+			xh.send(formData);
+			
+			xh.onload = function () {
+				console.log(xh.status);
+				console.log(xh.responseText);
+			}
+			
+		});
+		
+	}
+</script>
+</head>
+<body>
+透過FromData傳遞資料
+<form id="form1">
+	<p>
+	Name:<input type="text" name="userName" placeholder="Please input your name."><br/>
+	Information:<br/>
+	Info1.<input type="text" name="result1"><br>
+	Info2.<input type="text" name="result1"><br>
+	</p>
+	<input type="submit" id="send" value="Send">	
+</form>
+</body>
+</html>

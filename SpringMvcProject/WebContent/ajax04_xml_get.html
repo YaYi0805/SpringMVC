@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax04_xml_get</title>
+<script type="text/javascript">
+	var xh = new XMLHttpRequest();
+	xh.open('get', 'game.xml', true);
+	xh.send();
+
+	xh.onload = function() {
+		//console.log(xh.status);
+		//console.log(xh.responseXML);
+		var result = xh.responseXML.documentElement; //.documentElement回傳文件中的根元素(root element)
+		//console.log(result);
+		
+		var tagLen = result.getElementsByTagName('role').length; //取得標籤名role有幾組
+		//console.log(tagLen);
+		
+		var resultText = '';
+		for(var i=0;i<tagLen;i++){ //外層role回圈
+			var xSel = result.getElementsByTagName('role')[i];
+			//console.log(xSel);
+			
+			for(var j=0;j<2;j++){ //內層role的子標籤迴圈(name,level)
+				var nodeName = xSel.childNodes[j].nextElementSibling; //.nextElementSibling 回傳element 的下一個元素(element) 物件(object) 
+				var nodeContent= xSel.childNodes[j].nextElementSibling.textContent;
+				//console.log(nodeName);
+				//console.log(nodeContent);
+				resultText += nodeContent + ' ';
+			}
+			resultText += '<br/>';
+		}
+		
+		console.log(resultText);
+		
+		document.getElementById('result').innerHTML = resultText;
+	};
+</script>
+</head>
+<body>
+Ajax action - 透過XMLHttpRequest物件接收XML格式資料 - 非同步
+<div id = "result"></div>
+</body>
+</html>

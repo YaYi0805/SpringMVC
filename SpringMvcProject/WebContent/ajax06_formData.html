@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax06_formData</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var form = document.getElementById('form1');
+		var send = document.getElementById('send');
+		
+		send.addEventListener('click', function (e) {
+			e.preventDefault(); //取消瀏覽器預設的行為
+			
+			var formData = new FormData(form);
+			
+			var userName = formData.get("userName"); //get(key)方法取得"userName"的第一個值
+			console.log(userName);
+			
+			var resultArray = formData.getAll("result1"); //getAll(key)方法取得"result1"的所有值->Array
+			console.log(resultArray);
+			
+		});
+		
+	}
+</script>
+</head>
+<body>
+透過FromData傳遞資料
+<form id="form1">
+	<p>
+	Name:<input type="text" name="userName" placeholder="Please input your name."><br/>
+	Information:<br/>
+	Info1.<input type="text" name="result1"><br>
+	Info2.<input type="text" name="result1"><br>
+	</p>
+	<input type="submit" id="send" value="Send">	
+</form>
+</body>
+</html>

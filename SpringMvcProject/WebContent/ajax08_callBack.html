@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax08_callBack</title>
+<script type="text/javascript">
+	
+	function sayHello(name) {
+		alert('Hello,' + name);
+	}
+	
+	function processCallBackAction(actionName) {
+		var yourName = prompt('Please input your name.');
+		actionName(yourName);
+	}
+	
+	processCallBackAction(sayHello); //先執行processCallBackAction()方法,再呼叫回乎函數sayHello()方法
+	
+</script>
+</head>
+<body>
+CallBack Function Action - 回呼函數:透過傳遞參數呼叫函數其他函數的函數
+</body>
+</html>
